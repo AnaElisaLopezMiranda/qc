@@ -71,6 +71,8 @@ def setup_wandb(
     mode='online',
 ):
     """Set up Weights & Biases for logging."""
+    import wandb
+    return wandb.init(mode="disabled")
     wandb_output_dir = tempfile.mkdtemp()
     tags = [group] if group is not None else None
 
