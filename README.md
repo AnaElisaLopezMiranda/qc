@@ -29,17 +29,18 @@ We include the example command for all the methods we evaluate in our paper belo
 MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=32 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5
 
 ```
-The following are the figures included in assignment
-/qc/create_comparison_plots.py
-/qc/figure1_comparison.png
-/qc/reproduction_vs_original.png
 
-**Run the following to create the figures**
+## Run the following to create the figures
 Make sure to update the path for the ablation and reproduction eval.csv
 
-/qc/create_comparison_plots.py 
+/create_comparison_plots.py 
 
-**Results**
+The following are the figures included in assignment
+/create_comparison_plots.py
+/figure1_comparison.png
+/reproduction_vs_original.png
+
+## Results
 The results from the reproduction and ablation are under /qc/exp/dummy/reproduce/cube-triple-play-singletask-task2-v0. It includes the main results (eval.csv) as well as the results for the offline agent and the online agent. 
 
 It will take approximately 5 hrs to for each run.
