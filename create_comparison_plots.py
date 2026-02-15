@@ -31,7 +31,7 @@ for f in csv_files:
     print(f"  {f}")
 
 # Load the most recent (or you can specify which one)
-reproduction_csv = '/home/ubuntu/qc/exp/dummy/reproduce/cube-triple-play-singletask-task2-v0/sd00020260214_150658/eval.csv'
+reproduction_csv = '/home/ubuntu/qc/exp/dummy/reproduce/cube-triple-play-singletask-task2-v0/sd00320260214_221124/eval.csv'
 ablation_csv = '/home/ubuntu/qc/exp/dummy/reproduce/cube-triple-play-singletask-task2-v0/sd00020260214_183451/eval.csv'
 
 print(f"\nUsing for reproduction: {reproduction_csv}")

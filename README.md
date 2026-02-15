@@ -2,20 +2,6 @@
 
 # [Reinforcement Learning with Action Chunking](https://arxiv.org/abs/2507.07969)
 
-## [[website](https://colinqiyangli.github.io/qc/)]      [[pdf](https://arxiv.org/pdf/2507.07969)]
-
-</div>
-
-<p align="center">
-  <a href="https://colinqiyangli.github.io/qc/">
-    <img alt="teaser figure" src="./assets/teaser.png" width="48%">
-  </a>
-  <a href="https://colinqiyangli.github.io/qc/">
-    <img alt="aggregated results" src="./assets/agg.png" width="48%">
-  </a>
-</p>
-
-
 ## Overview
 Q-chunking runs RL on a *temporally extended action (action chunking) space* with an expressive behavior constraint to leverage prior data for improved exploration and online sample efficiency.
 
@@ -42,30 +28,21 @@ We include the example command for all the methods we evaluate in our paper belo
 # QC
 MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=32 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5
 
-# BFN-n
-MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=4 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5 --agent.action_chunking=False
-
-# BFN
-MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=4 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=1
-
-# QC-FQL
-MUJOCO_GL=egl python main.py --run_group=reproduce --agent.alpha=100 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5
-
-# FQL-n
-MUJOCO_GL=egl python main.py --run_group=reproduce --agent.alpha=100 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5 --agent.action_chunking=False
-
-# FQL
-MUJOCO_GL=egl python main.py --run_group=reproduce --agent.alpha=100 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=1
-
-# RLPD
-MUJOCO_GL=egl python main_online.py --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=1 
-
-# RLPD-AC
-MUJOCO_GL=egl python main_online.py --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5
-
-# QC-RLPD
-MUJOCO_GL=egl python main_online.py --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5 --agent.bc_alpha=0.01
 ```
+The following are the figures included in assignment
+/qc/create_comparison_plots.py
+/qc/figure1_comparison.png
+/qc/reproduction_vs_original.png
+
+**Run the following to create the figures**
+Make sure to update the path for the ablation and reproduction eval.csv
+
+/qc/create_comparison_plots.py 
+
+**Results**
+The results from the reproduction and ablation are under /qc/exp/dummy/reproduce/cube-triple-play-singletask-task2-v0. It includes the main results (eval.csv) as well as the results for the offline agent and the online agent. 
+
+It will take approximately 5 hrs to for each run.
 
 ```
 @inproceedings{
