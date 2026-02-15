@@ -29,6 +29,11 @@ We include the example command for all the methods we evaluate in our paper belo
 MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=32 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=5
 
 ```
+```bash
+# For Ablation study
+MUJOCO_GL=egl python main.py --run_group=reproduce --agent.actor_type=best-of-n --agent.actor_num_samples=32 --env_name=cube-triple-play-singletask-task2-v0 --sparse=False --horizon_length=1
+
+```
 
 ## Run the following to create the figures
 Make sure to update the path for the ablation and reproduction eval.csv
